@@ -35,34 +35,55 @@ def cria_assinatura(nome_funcionario,cargo,telefone,ramal):
 
 
 
-def main_loop():
+# def main_loop():
 
-    nome_funcionario = st.sidebar.text_input("Nome do colaborador",)
-    cargo = st.sidebar.text_input("Cargo do colaborador",)
-    telefone = "+55 (11) 2490 - 2000 – Ramal"
-    ramal = st.sidebar.text_input("Ramal",)
-    imagem = cria_assinatura(nome_funcionario,cargo,telefone,ramal)
+#     nome_funcionario = st.sidebar.text_input("Nome do colaborador",)
+#     cargo = st.sidebar.text_input("Cargo do colaborador",)
+#     telefone = "+55 (11) 2490 - 2000 – Ramal"
+#     ramal = st.sidebar.text_input("Ramal",)
+#     imagem = cria_assinatura(nome_funcionario,cargo,telefone,ramal)
     
     
-    # # Convertendo a imagem para bytes
-    img_bytes = io.BytesIO()
-    imagem.save(img_bytes, format='PNG')
-    img_bytes = img_bytes.getvalue()
+#     # # Convertendo a imagem para bytes
+#     img_bytes = io.BytesIO()
+#     imagem.save(img_bytes, format='PNG')
+#     img_bytes = img_bytes.getvalue()
 
-    # # Botão de download
-    st.download_button(
-        label="Baixar imagem",
-        data=img_bytes,
-        file_name=nome_funcionario +".png",
-        mime="image/png"
-    )
-# with open("flower.png", "rb") as file:
-#     btn = st.download_button(
-#             label="Download image",
-#             data=file,
-#             file_name="flower.png",
-#             mime="image/png"
-#           )
+#     # # Botão de download
+#     st.download_button(
+#         label="Baixar imagem",
+#         data=img_bytes,
+#         file_name=nome_funcionario +".png",
+#         mime="image/png"
+#     )
+# # with open("flower.png", "rb") as file:
+# #     btn = st.download_button(
+# #             label="Download image",
+# #             data=file,
+# #             file_name="flower.png",
+# #             mime="image/png"
+# #           )
     
-if __name__ == '__main__':
-    main_loop()    
+# if __name__ == '__main__':
+#     main_loop()    
+
+
+nome_funcionario = st.sidebar.text_input("Nome do colaborador",)
+cargo = st.sidebar.text_input("Cargo do colaborador",)
+telefone = "+55 (11) 2490 - 2000 – Ramal"
+ramal = st.sidebar.text_input("Ramal",)
+imagem = cria_assinatura(nome_funcionario,cargo,telefone,ramal)
+
+
+# # Convertendo a imagem para bytes
+img_bytes = io.BytesIO()
+imagem.save(img_bytes, format='PNG')
+img_bytes = img_bytes.getvalue()
+
+# # Botão de download
+st.download_button(
+    label="Baixar imagem",
+    data=img_bytes,
+    file_name=nome_funcionario +".png",
+    mime="image/png"
+)
