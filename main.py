@@ -15,7 +15,7 @@ import io
 def cria_assinatura(nome_funcionario,cargo,telefone,ramal):
     cor = "black"
     #abrir imagem
-    imagem = Image.open('ass-modelo.PNG')
+    imagem = Image.open('./ass-modelo.PNG')
     #abrir para sobreposição
     draw = ImageDraw.Draw(imagem)
     # setar qual a fonte usar e tamanho
